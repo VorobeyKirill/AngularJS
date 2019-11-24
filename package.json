@@ -1,0 +1,26 @@
+{
+  "name": "angularjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VorobeyKirill/AngularJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VorobeyKirill/AngularJS/issues"
+  },
+  "homepage": "https://github.com/VorobeyKirill/AngularJS#readme",
+  "devDependencies": {
+    "eslint": "^6.7.0",
+    "eslint-config-airbnb-base": "^14.0.0"
+  },
+  "dependencies": {
+    "angular": "1.6.9"
+  }
+}
