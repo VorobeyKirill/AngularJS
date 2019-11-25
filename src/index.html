@@ -6,10 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AngularJS</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
 </head>
 <body>
     <script src="app.js"></script>
     <script src="./modules/mainPage/components/searchForm/searchForm.js"></script>
-    <search-form></search-form>
+    <script src="./modules/repoListPage/components/repoList/repoList.js"></script>
+    <script src="modules/repoListPage/components/repoItem/repoItem.js"></script>
+    <ui-view></ui-view>
 </body>
 </html>
