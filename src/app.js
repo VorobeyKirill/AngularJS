@@ -14,8 +14,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
   }
 
   const repoListPage = {
-      name: 'repoList',
-      url: '/repoList',
+      name: 'search',
+      url: '/search/{query}',
       template: '<search-form></search-form><repo-list></repo-list>'
   }
 
@@ -24,4 +24,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state(mainPage);
   $stateProvider.state(authorPage);  
   $stateProvider.state(repoListPage);
+});
+
+app.factory('repoSearch', () => {
+  const repoList = [];
+  return async function (searchValue) {
+    const responce = await fetch(`https://api.github.com/search/repositories?q=${searchValue}&page=1`);
+    const data = await responce.json();
+    data.items.map(el => repoList.push(el));
+    return repoList;
+  }
 });
