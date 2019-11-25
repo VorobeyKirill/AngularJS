@@ -1,6 +1,8 @@
 angular.module('app').component('repoList', {
     templateUrl: './modules/repoListPage/components/repoList/repoList.html',
-    controller: ['$stateParams', 'repoSearch', '$scope', ($scope, $stateParams, repoSearch) => {
-        repoSearch($stateParams.query);
+    controller: ['$scope', '$stateParams', 'repoSearch', ($scope, $stateParams, repoSearch) => {
+      repoSearch($stateParams.query).then((res) => {
+        $scope.repoList = res;
+      });
     }]
 });
