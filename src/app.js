@@ -4,7 +4,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
   const authorPage = {
     name: 'author',
     url: '/author',
-    template: '<h2>AUTHOR</h2>'
+    template: '<author></author>'
   }
 
   const mainPage = {
