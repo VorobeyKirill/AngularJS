@@ -1,5 +1,12 @@
-<ul>
-    <li ng-repeat="item in repoList">
-        <repo-item></repo-item>
-    </li>
-</ul>
+<div>
+    <ul>
+        <li ng-repeat="item in repoList">
+            <repo-item info="item"></repo-item>
+        </li>
+    </ul>
+    <div ng-show="repoList.length">
+        <button>Prev</button>
+        <span></span>
+        <button>Next</button>
+    </div>
+</div>

@@ -1,14 +1,6 @@
 <div>
-    <h2>
-        REPO NAME
-    </h2>
-    <p>
-        AUTHOR
-    </p>
-    <p>
-        STARS
-    </p>
-    <p>
-        FORKS
-    </p>
+    <a href="{{$ctrl.info.svn_url}}">{{$ctrl.info.name}}</a>
+    <p>Author: <a ui-sref="author({query: $ctrl.info.owner.url})">{{$ctrl.info.owner.login}}</a></p>
+    <p>Stars: {{$ctrl.info.stargazers_count}}</p>
+    <p>Forks: {{$ctrl.info.forks_count}}</p>
 </div>

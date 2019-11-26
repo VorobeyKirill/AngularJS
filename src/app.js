@@ -3,7 +3,7 @@ const app = angular.module('app', ['ui.router']);
 app.config(function($stateProvider, $urlRouterProvider) {
   const authorPage = {
     name: 'author',
-    url: '/author',
+    url: '/author?query',
     template: '<author></author>'
   }
 
@@ -15,7 +15,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
   const repoListPage = {
       name: 'search',
-      url: '/search/{query}',
+      url: '/search?query',
       template: '<search-form></search-form>' +
                 '<repo-list></repo-list>'
   }
@@ -28,11 +28,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
 });
 
 app.factory('repoSearch', () => {
-  const repoList = [];
-  return async function(searchValue) {
-    const responce = await fetch(`https://api.github.com/search/repositories?q=${searchValue}&page=1`);
+  return async function(searchValue, page) {
+    const responce = await fetch(`https://api.github.com/search/repositories?q=${searchValue}&page=${page}`);
     const data = await responce.json();
-    data.items.map(el => repoList.push(el));
-    return repoList;
+    return data;
   }
 });
+
+app.factory('authorSearch', () => {
+  return async function(url) {
+    const responce = await fetch(url);
+    const data = await responce.json();
+    return data;
+  }
+})
