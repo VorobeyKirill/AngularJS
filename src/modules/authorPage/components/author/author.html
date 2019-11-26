@@ -1,10 +1,11 @@
 <div>
     <div>
         <img src="{{info.avatar_url}}">
-        <a href="#">Author name</a>
-        <p>NUMBER OF REPOS</p>
-        <p>NUMBER OF FOLLOWERS</p>
-        <p>NUMBER OF FOLLOWING</p>
+        <a href="{{info.html_url}}">{{info.login}}</a>
+        <span>{{info.name}}</span>
+        <p>Repositories: {{info.public_repos}}</p>
+        <p>Followers: {{info.followers}}</p>
+        <p>Following: {{info.following}}</p>
     </div>
-    <a ui-sref="main">RETURN TO MAIN</a>
+    <a ui-sref="main">Back on main</a>
 </div>
