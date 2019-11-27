@@ -1,12 +1,20 @@
 <div>
-    <ul class="repoList">
+    <ul class="reposList">
         <li ng-repeat="item in repoList">
             <repo-item info="item"></repo-item>
         </li>
     </ul>
-    <div ng-show="reposStackCounter.length">
-        <button>Prev</button>
-        <span></span>
-        <button>Next</button>
+    <div class="pagination" ng-show="repoList.length">
+        <a class="pagination-button">Prev</a>
+        <a class="pagination-button">1</a>
+        <span>...</span>
+        <a class="pagination-button">{{5}}</a>
+        <a class="pagination-button">{{6}}</a>
+        <a class="pagination-button">{{7}}</a>
+        <a class="pagination-button">{{8}}</a>
+        <a class="pagination-button">{{9}}</a>
+        <span>...</span>
+        <a class="pagination-button">20</a>
+        <a class="pagination-button">Next</a>
     </div>
 </div>

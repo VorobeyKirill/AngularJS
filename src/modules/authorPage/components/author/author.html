@@ -1,11 +1,15 @@
 <div>
-    <div>
-        <img src="{{info.avatar_url}}">
-        <a href="{{info.html_url}}">{{info.login}}</a>
-        <span>{{info.name}}</span>
-        <p>Repositories: {{info.public_repos}}</p>
-        <p>Followers: {{info.followers}}</p>
-        <p>Following: {{info.following}}</p>
+    <div class="author">
+        <img class="author__photo" src="{{info.avatar_url}}">
+        <div class="info">
+            <a class="info__login" href="{{info.html_url}}">{{info.login}}</a>
+            <span class="info__name">{{info.name}}</span>
+            <p class="info__repos">Repositories: {{info.public_repos}}</p>
+            <div class="additional">
+                <p class="additional__followers">Followers: {{info.followers}}</p>
+                <p class="additional__following">Following: {{info.following}}</p>
+            </div>
+        </div>
     </div>
-    <a ui-sref="main">Back on main</a>
+    <a class="linkToMain" ui-sref="main">Back to main</a>
 </div>

@@ -1,3 +1,56 @@
+.author {
+  width: 60%;
+  height: 40vh;
+  margin: 20vh auto;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid #999;
+  font-family: sans-serif; }
+
+.author__photo {
+  width: 30%;
+  height: 30vh;
+  margin-top: 5vh; }
+
+.info {
+  width: 55%;
+  margin-top: 5vh;
+  text-align: center; }
+
+.info__login {
+  display: block;
+  color: #000;
+  font-size: 1.3rem; }
+
+.info__name {
+  display: block;
+  margin-top: 10px;
+  color: #888; }
+
+.info__repos {
+  display: block;
+  margin-top: 20px; }
+
+.additional {
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.linkToMain {
+  display: block;
+  width: 200px;
+  height: 30px;
+  margin: 0 auto;
+  border: 1px solid #999;
+  color: #000;
+  line-height: 30px;
+  text-align: center;
+  font-family: sans-serif; }
+  .linkToMain:hover {
+    cursor: pointer;
+    background-color: #eee; }
 
 .searchForm {
   width: 60%;
@@ -17,7 +70,8 @@
   height: 4vh;
   border: 1px solid #888;
   border-radius: 5px;
-  background-color: #fff; }
+  background-color: #fff;
+  margin-left: 1%; }
   .searchForm__submit:focus {
     outline: none; }
   .searchForm__submit:hover {
@@ -37,13 +91,30 @@
   color: #000;
   font-size: 1.2rem; }
 
-.repoItem__content {
+.content {
   width: 60%;
   margin: 20px auto;
   display: flex;
   justify-content: space-between;
   align-items: center; }
 
-.repoItem__content__author {
+.content__author {
   color: #000; }
 
+.reposList {
+  margin-top: -50px; }
+
+.pagination {
+  width: 27%;
+  margin: 50px auto; }
+
+.pagination-button {
+  padding: 4px 6px;
+  text-decoration: none;
+  font-size: 1.2rem; }
+  .pagination-button:hover:not(:active) {
+    cursor: pointer;
+    background-color: #ddd; }
+  .pagination-button:active {
+    background-color: #725ee7;
+    color: #fff; }

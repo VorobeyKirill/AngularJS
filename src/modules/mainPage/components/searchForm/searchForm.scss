@@ -24,6 +24,7 @@ $border: 1px solid #888;
     border: $border;
     border-radius: $borderRadius;
     background-color: #fff;
+    margin-left: 1%;
     &:focus {
         outline: none;
     }
