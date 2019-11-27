@@ -4,7 +4,7 @@
   margin: 15vh auto; }
 
 .searchForm__textInput {
-  width: 80%;
+  width: 87%;
   height: 4vh;
   border: 1px solid #888;
   border-radius: 5px;
@@ -25,25 +25,25 @@
     cursor: pointer; }
 
 .repoItem {
-  width: 80%;
+  width: 60%;
   height: 6vh;
   margin: 10px auto;
   border: 1px solid #888;
-  border-radius: 5px; }
+  border-radius: 5px;
+  text-align: center;
+  font-family: sans-serif; }
 
-.sliderContainer {
-  width: 57%;
-  margin: -50px auto;
-  overflow: hidden; }
+.repoItem__name {
+  color: #000;
+  font-size: 1.2rem; }
 
-.sliderContainer__slider {
-  margin: 0 auto;
+.repoItem__content {
+  width: 60%;
+  margin: 20px auto;
   display: flex;
-  justify-content: space-around;
-  align-content: space-around;
-  flex-wrap: nowrap;
-  width: max-content;
-  transition: all ease 0.01s; }
+  justify-content: space-between;
+  align-items: center; }
 
-.sliderContainer__slider__list {
-  width: 80vh; }
+.repoItem__content__author {
+  color: #000; }
+

@@ -15,7 +15,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
   const repoListPage = {
       name: 'search',
-      url: '/search?query',
+      url: '/search?query&page',
       template: '<search-form></search-form>' +
                 '<repo-list></repo-list>'
   }
@@ -29,7 +29,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 app.factory('repoSearch', () => {
   return async function(searchValue, page) {
-    const responce = await fetch(`https://api.github.com/search/repositories?q=${searchValue}&page=${page}`);
+    const responce = await fetch(`https://api.github.com/search/repositories?q=${searchValue}&page=${page}&per_page=20`);
     const data = await responce.json();
     return data;
   }

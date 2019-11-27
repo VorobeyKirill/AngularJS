@@ -1,7 +1,30 @@
+$textColor: #000;
+$width: 60%;
+$fontFamily: sans-serif;
+
 .repoItem {
-    width: 80%;
+    width: $width;
     height: 6vh;
     margin: 10px auto;
     border: 1px solid #888;
     border-radius: 5px;
+    text-align: center;
+    font-family: $fontFamily;
+}
+
+.repoItem__name {
+    color: $textColor;
+    font-size: 1.2rem;
+}
+
+.repoItem__content {
+    width: $width;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.repoItem__content__author {
+    color: $textColor;
 }

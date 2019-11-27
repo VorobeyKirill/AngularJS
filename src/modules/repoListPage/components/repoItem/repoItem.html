@@ -1,6 +1,8 @@
 <div class="repoItem">
     <a class="repoItem__name" href="{{$ctrl.info.svn_url}}">{{$ctrl.info.name}}</a>
-    <p class="repoItem__auhor">Author: <a ui-sref="author({query: $ctrl.info.owner.url})">{{$ctrl.info.owner.login}}</a></p>
-    <p class="repoItem__stars">Stars: {{$ctrl.info.stargazers_count}}</p>
-    <p class="repoItem__forks">Forks: {{$ctrl.info.forks_count}}</p>
+    <divc class="repoItem__content">
+        <p class="repoItem__content__author">Author: <a ui-sref="author({query: $ctrl.info.owner.url})">{{$ctrl.info.owner.login}}</a></p>
+        <p class="repoItem__content__stars">Stars: {{$ctrl.info.stargazers_count}}</p>
+        <p class="repoItem__content__forks">Forks: {{$ctrl.info.forks_count}}</p>
+    </div>
 </div>

@@ -1,13 +1,9 @@
 <div>
-    <div class="sliderContainer">
-        <div class="sliderContainer__slider">
-            <ul class="sliderContainer__slider__list" ng-repeat="page in reposStackCounter">
-                <li ng-repeat="item in page">
-                    <repo-item info="item"></repo-item>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <ul class="repoList">
+        <li ng-repeat="item in repoList">
+            <repo-item info="item"></repo-item>
+        </li>
+    </ul>
     <div ng-show="reposStackCounter.length">
         <button>Prev</button>
         <span></span>
