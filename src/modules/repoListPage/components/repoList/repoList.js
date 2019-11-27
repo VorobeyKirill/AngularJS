@@ -15,8 +15,6 @@ angular.module('app').component('repoList', {
                 $scope.requestCounter += 1;
                 while ($scope.repoList.length) {
                     $scope.reposStackCounter.push($scope.repoList.splice(0, 20));
-                    console.log($scope.repoList);
-                    console.log($scope.reposStackCounter);
                 }
             });
         });

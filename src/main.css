@@ -1,5 +1,49 @@
 
+.searchForm {
+  width: 60%;
+  margin: 15vh auto; }
 
+.searchForm__textInput {
+  width: 80%;
+  height: 4vh;
+  border: 1px solid #888;
+  border-radius: 5px;
+  padding-left: 10px; }
+  .searchForm__textInput:focus {
+    outline: none; }
 
-.slider {
-  display: flex; }
+.searchForm__submit {
+  width: 10%;
+  height: 4vh;
+  border: 1px solid #888;
+  border-radius: 5px;
+  background-color: #fff; }
+  .searchForm__submit:focus {
+    outline: none; }
+  .searchForm__submit:hover {
+    background-color: #ccc;
+    cursor: pointer; }
+
+.repoItem {
+  width: 80%;
+  height: 6vh;
+  margin: 10px auto;
+  border: 1px solid #888;
+  border-radius: 5px; }
+
+.sliderContainer {
+  width: 57%;
+  margin: -50px auto;
+  overflow: hidden; }
+
+.sliderContainer__slider {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+  flex-wrap: nowrap;
+  width: max-content;
+  transition: all ease 0.01s; }
+
+.sliderContainer__slider__list {
+  width: 80vh; }

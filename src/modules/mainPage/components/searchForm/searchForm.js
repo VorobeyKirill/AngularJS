@@ -3,7 +3,9 @@ angular.module('app').component('searchForm', {
   controller: ['$scope', '$state', '$stateParams', ($scope, $state, $stateParams) => {
     $scope.value = $stateParams.query;
     $scope.handleSearch = function handleSearch(searchValue) {
-      $state.go(`search`, {query: searchValue});
+      if (searchValue) {
+        $state.go(`search`, {query: searchValue});
+      }
     };
   }]
 });

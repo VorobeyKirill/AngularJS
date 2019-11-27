@@ -1,0 +1,34 @@
+$borderRadius: 5px;
+$height: 4vh;
+$border: 1px solid #888;
+
+.searchForm {
+    width: 60%;
+    margin: 15vh auto;
+}
+
+.searchForm__textInput {
+    width: 80%;
+    height: $height;
+    border: $border;
+    border-radius: $borderRadius;
+    padding-left: 10px;
+    &:focus {
+        outline: none;
+    }
+}
+
+.searchForm__submit {
+    width: 10%;
+    height: $height;
+    border: $border;
+    border-radius: $borderRadius;
+    background-color: #fff;
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        background-color: #ccc;
+        cursor: pointer;
+    }
+}
