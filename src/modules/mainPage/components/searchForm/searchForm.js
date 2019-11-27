@@ -4,8 +4,8 @@ angular.module('app').component('searchForm', {
     $scope.value = $stateParams.query;
     $scope.handleSearch = function handleSearch(searchValue) {
       if (searchValue) {
-        $state.go(`search`, {query: searchValue, page: 1});
+        $state.go('search', { query: searchValue, page: 1 });
       }
     };
-  }]
+  }],
 });
