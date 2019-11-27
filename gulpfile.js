@@ -16,3 +16,18 @@ gulp.task('sass', () => gulp.src('./src/**/*.scss')
   .pipe(sass().on('error', sass.logError))
   .pipe(concat('main.css'))
   .pipe(gulp.dest('./src')));
+
+
+gulp.task('scripts', function() {
+    return gulp.src('./src/**/*.js')
+      .pipe(concat('main.js'))
+      .pipe(gulp.dest('./src'));
+});
+
+gulp.task('watchSass', function () {
+    gulp.watch('./src/**/*.scss' , ['sass'])
+});
+
+gulp.task('watchJs', function () {
+  gulp.watch('./src/**/*.js' , ['scripts'])
+});
