@@ -70,9 +70,9 @@ angular.module('app').component('repoItem', {
 
 angular.module('app').component('repoList', {
   templateUrl: './modules/repoListPage/components/repoList/repoList.html',
-  controller: ['$scope', '$stateParams', 'repoSearch', '$q', ($scope, $stateParams, repoSearch, $q) => {
+  controller: ['$scope', '$stateParams', 'repoSearch', '$q', '$state', ($scope, $stateParams, repoSearch, $q, $state) => {
     $scope.repoList = [];
-    $scope.currentPage = 1;
+    $scope.currentPage = parseInt($stateParams.page);
     $scope.lastPage;
     $q.when(repoSearch($stateParams.query, $stateParams.page))
       .then((res) => {
@@ -83,22 +83,16 @@ angular.module('app').component('repoList', {
           $scope.lastPage = Math.floor(res.total_count / 20) + 1;
         }
       });
-    $scope.searchForNewPage = () => {
-      $q.when(repoSearch($stateParams.query, $scope.currentPage))
-        .then((res) => {
-          $scope.repoList = res.items;
-        });
-    };
     $scope.handleClick = (page) => {
       switch (page) {
         case ('Next'): {
           $scope.currentPage += 1;
-          $scope.searchForNewPage();
+          $state.go('search', { query: $stateParams.query, page: $scope.currentPage });
           break;
         }
         case ('Prev'): {
           $scope.currentPage -= 1;
-          $scope.searchForNewPage();
+          $state.go('search', { query: $stateParams.query, page: $scope.currentPage });
           break;
         }
         case ('...'): {
@@ -106,8 +100,8 @@ angular.module('app').component('repoList', {
         }
         default: {
           if (+page) {
-            $scope.currentPage = page;
-            $scope.searchForNewPage();
+            $scope.currentPage = +page;
+            $state.go('search', { query: $stateParams.query, page: $scope.currentPage });
           }
           break;
         }

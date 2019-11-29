@@ -15,8 +15,8 @@
         cursor: pointer;
         background-color: #ddd;
     }
-    &:active {
-        background-color: rgb(114, 94, 231);
-        color: #fff;
-    }
+}
+
+.active {
+    border: 1px solid rgb(67, 65, 216);
 }

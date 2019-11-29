@@ -52,6 +52,26 @@
     cursor: pointer;
     background-color: #eee; }
 
+.repoItem {
+  width: 60%;
+  height: 6vh;
+  margin: 10px auto;
+  border: 1px solid #888;
+  border-radius: 5px;
+  text-align: center;
+  font-family: sans-serif; }
+
+.repoItem__name {
+  color: #000;
+  font-size: 1.2rem; }
+
+.content {
+  width: 60%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
 .searchForm {
   width: 60%;
   margin: 15vh auto; }
@@ -78,29 +98,6 @@
     background-color: #ccc;
     cursor: pointer; }
 
-.repoItem {
-  width: 60%;
-  height: 6vh;
-  margin: 10px auto;
-  border: 1px solid #888;
-  border-radius: 5px;
-  text-align: center;
-  font-family: sans-serif; }
-
-.repoItem__name {
-  color: #000;
-  font-size: 1.2rem; }
-
-.content {
-  width: 60%;
-  margin: 20px auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
-
-.content__author {
-  color: #000; }
-
 .reposList {
   margin-top: -50px; }
 
@@ -115,6 +112,6 @@
   .pagination-button:hover:not(:active) {
     cursor: pointer;
     background-color: #ddd; }
-  .pagination-button:active {
-    background-color: #725ee7;
-    color: #fff; }
+
+.active {
+  border: 1px solid #4341d8; }

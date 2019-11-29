@@ -21,11 +21,3 @@ gulp.task('sass', () => gulp.src('./src/**/*.scss')
 gulp.task('scripts', () => gulp.src('./src/**/*.js')
   .pipe(concat('main.js'))
   .pipe(gulp.dest('./src')));
-
-gulp.task('watchSass', () => {
-  gulp.watch('./src/**/*.scss', ['sass']);
-});
-
-gulp.task('watchJs', () => {
-  gulp.watch('./src/**/*.js', ['scripts']);
-});

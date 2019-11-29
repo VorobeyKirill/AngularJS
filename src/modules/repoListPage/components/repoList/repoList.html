@@ -6,15 +6,15 @@
     </ul>
     <div class="pagination" ng-show="repoList.length" ng-click="handleClick($event.target.innerText)">
         <a class="pagination-button" ng-show="currentPage > 1">Prev</a>
-        <a class="pagination-button">1</a>
+        <a class="pagination-button" ng-class="{active: (+currentPage === 1)}">1</a>
         <span ng-show="currentPage > 4">...</span>
         <a class="pagination-button" ng-show="currentPage > 3">{{currentPage - 2}}</a>
         <a class="pagination-button" ng-show="currentPage > 2">{{currentPage - 1}}</a>
-        <a class="pagination-button" ng-show="currentPage > 1 && +currentPage !== +lastPage">{{currentPage}}</a>
+        <a class="pagination-button active" ng-show="currentPage > 1 && +currentPage !== +lastPage">{{currentPage}}</a>
         <a class="pagination-button" ng-show="currentPage < lastPage - 1">{{+currentPage + 1}}</a>
         <a class="pagination-button" ng-show="currentPage < lastPage - 2">{{+currentPage + 2}}</a>
         <span ng-show="currentPage < lastPage - 3">...</span>
-        <a class="pagination-button">{{lastPage}}</a>
+        <a class="pagination-button" ng-class="{active: (+currentPage === +lastPage)}">{{lastPage}}</a>
         <a class="pagination-button" ng-show="currentPage < lastPage">Next</a>
     </div>
 </div>
