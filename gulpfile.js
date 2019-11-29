@@ -18,6 +18,6 @@ gulp.task('sass', () => gulp.src('./src/**/*.scss')
   .pipe(gulp.dest('./src')));
 
 
-gulp.task('scripts', () => gulp.src('./src/**/*.js')
+gulp.task('scripts', () => gulp.src(['./src/**/*.js', '!./src/**/*.spec.js'])
   .pipe(concat('main.js'))
   .pipe(gulp.dest('./src')));

@@ -27,14 +27,16 @@ app.config(($stateProvider, $urlRouterProvider) => {
   $stateProvider.state(repoListPage);
 });
 
-app.factory('repoSearch', () => async (searchValue, page) => {
-  const responce = await fetch(`https://api.github.com/search/repositories?q=${searchValue}&page=${page}&per_page=20`);
-  const data = await responce.json();
-  return data;
-});
+app.service('searchService', function () {
+  this.repoSearch = async (searchValue, page) => {
+    const responce = await fetch(`https://api.github.com/search/repositories?q=${searchValue}&page=${page}&per_page=20`);
+    const data = await responce.json();
+    return data;
+  }
 
-app.factory('authorSearch', () => async (url) => {
-  const responce = await fetch(url);
-  const data = await responce.json();
-  return data;
+  this.authorSearch = async url => {
+    const responce = await fetch(url);
+    const data = await responce.json();
+    return data;
+  }
 });

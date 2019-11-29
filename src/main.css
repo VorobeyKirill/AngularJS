@@ -5,7 +5,8 @@
   display: flex;
   justify-content: space-around;
   border: 1px solid #999;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  background-color: #fff; }
 
 .author__photo {
   width: 30%;
@@ -47,30 +48,14 @@
   color: #000;
   line-height: 30px;
   text-align: center;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  background-color: #fff; }
   .linkToMain:hover {
     cursor: pointer;
     background-color: #eee; }
 
-.repoItem {
-  width: 60%;
-  height: 6vh;
-  margin: 10px auto;
-  border: 1px solid #888;
-  border-radius: 5px;
-  text-align: center;
-  font-family: sans-serif; }
-
-.repoItem__name {
-  color: #000;
-  font-size: 1.2rem; }
-
-.content {
-  width: 60%;
-  margin: 20px auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
+body {
+  background-color: #ffffe6; }
 
 .searchForm {
   width: 60%;
@@ -97,6 +82,27 @@
   .searchForm__submit:hover {
     background-color: #ccc;
     cursor: pointer; }
+
+.repoItem {
+  width: 60%;
+  height: 6vh;
+  margin: 10px auto;
+  border: 1px solid #888;
+  border-radius: 5px;
+  text-align: center;
+  font-family: sans-serif;
+  background-color: #fcfff2; }
+
+.repoItem__name {
+  color: #000;
+  font-size: 1.2rem; }
+
+.content {
+  width: 60%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
 
 .reposList {
   margin-top: -50px; }

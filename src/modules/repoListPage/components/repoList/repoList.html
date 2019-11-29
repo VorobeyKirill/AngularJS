@@ -14,7 +14,7 @@
         <a class="pagination-button" ng-show="currentPage < lastPage - 1">{{+currentPage + 1}}</a>
         <a class="pagination-button" ng-show="currentPage < lastPage - 2">{{+currentPage + 2}}</a>
         <span ng-show="currentPage < lastPage - 3">...</span>
-        <a class="pagination-button" ng-class="{active: (+currentPage === +lastPage)}">{{lastPage}}</a>
+        <a class="pagination-button" ng-show="lastPage !== 1" ng-class="{active: (+currentPage === +lastPage)}">{{lastPage}}</a>
         <a class="pagination-button" ng-show="currentPage < lastPage">Next</a>
     </div>
 </div>

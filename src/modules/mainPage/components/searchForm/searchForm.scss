@@ -2,6 +2,10 @@ $borderRadius: 5px;
 $height: 4vh;
 $border: 1px solid #888;
 
+body {
+    background-color: rgb(255, 255, 230);
+}
+
 .searchForm {
     width: 60%;
     margin: 15vh auto;

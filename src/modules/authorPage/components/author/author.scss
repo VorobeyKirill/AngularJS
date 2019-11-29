@@ -1,6 +1,7 @@
 $border: 1px solid #999;
 $textColorDark: #000;
 $fontFamily: sans-serif;
+$backgroundColor: #fff;
 
 .author {
     width: 60%;
@@ -10,6 +11,7 @@ $fontFamily: sans-serif;
     justify-content: space-around;
     border: $border;
     font-family: $fontFamily;
+    background-color: $backgroundColor;
 }
 
 .author__photo {
@@ -59,6 +61,7 @@ $fontFamily: sans-serif;
     line-height: 30px;
     text-align: center;
     font-family: $fontFamily;
+    background-color: $backgroundColor;
     &:hover {
         cursor: pointer;
         background-color: #eee; 

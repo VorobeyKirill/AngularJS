@@ -1,11 +1,11 @@
 angular.module('app').component('repoList', {
   templateUrl: './modules/repoListPage/components/repoList/repoList.html',
-  controller: ['$scope', '$stateParams', 'repoSearch', '$q', '$state', ($scope, $stateParams, repoSearch, $q, $state) => {
+  controller: ['$scope', '$stateParams', '$q', '$state', 'searchService', ($scope, $stateParams, $q, $state, searchService) => {
     $scope.repoList = [];
     $scope.currentPage = parseInt($stateParams.page);
     $scope.lastPage;
-    $q.when(repoSearch($stateParams.query, $stateParams.page))
-      .then((res) => {
+    $q.when(searchService.repoSearch($stateParams.query, $stateParams.page))
+      .then(res => {
         $scope.repoList = res.items;
         if (res.total_count % 20 === 0) {
           $scope.lastPage = Math.floor(res.total_count / 20);
@@ -13,7 +13,7 @@ angular.module('app').component('repoList', {
           $scope.lastPage = Math.floor(res.total_count / 20) + 1;
         }
       });
-    $scope.handleClick = (page) => {
+    $scope.handleClick = page => {
       switch (page) {
         case ('Next'): {
           $scope.currentPage += 1;
