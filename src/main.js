@@ -49,6 +49,18 @@ angular.module('app').component('author', {
   }],
 });
 
+angular.module('app').component('searchForm', {
+  templateUrl: './modules/mainPage/components/searchForm/searchForm.html',
+  controller: ['$scope', '$state', '$stateParams', ($scope, $state, $stateParams) => {
+    $scope.value = $stateParams.query;
+    $scope.handleSearch = function handleSearch(searchValue) {
+      if (searchValue) {
+        $state.go('search', { query: searchValue, page: 1 });
+      }
+    };
+  }],
+});
+
 angular.module('app').component('repoItem', {
   templateUrl: './modules/repoListPage/components/repoItem/repoItem.html',
   bindings: {
@@ -63,23 +75,21 @@ angular.module('app').component('repoList', {
     $scope.currentPage = 1;
     $scope.lastPage;
     $q.when(repoSearch($stateParams.query, $stateParams.page))
-      .then(res => {
+      .then((res) => {
         $scope.repoList = res.items;
         if (res.total_count % 20 === 0) {
           $scope.lastPage = Math.floor(res.total_count / 20);
         } else {
           $scope.lastPage = Math.floor(res.total_count / 20) + 1;
-        } 
+        }
       });
     $scope.searchForNewPage = () => {
       $q.when(repoSearch($stateParams.query, $scope.currentPage))
-        .then( res => {
+        .then((res) => {
           $scope.repoList = res.items;
-      })
-    }
-
-    $scope.handleClick = page => {
-      console.log(page);
+        });
+    };
+    $scope.handleClick = (page) => {
       switch (page) {
         case ('Next'): {
           $scope.currentPage += 1;
@@ -101,18 +111,6 @@ angular.module('app').component('repoList', {
           }
           break;
         }
-      }
-    }  
-  }],
-});
-
-angular.module('app').component('searchForm', {
-  templateUrl: './modules/mainPage/components/searchForm/searchForm.html',
-  controller: ['$scope', '$state', '$stateParams', ($scope, $state, $stateParams) => {
-    $scope.value = $stateParams.query;
-    $scope.handleSearch = function handleSearch(searchValue) {
-      if (searchValue) {
-        $state.go('search', { query: searchValue, page: 1 });
       }
     };
   }],

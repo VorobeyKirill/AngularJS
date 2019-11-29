@@ -5,23 +5,21 @@ angular.module('app').component('repoList', {
     $scope.currentPage = 1;
     $scope.lastPage;
     $q.when(repoSearch($stateParams.query, $stateParams.page))
-      .then(res => {
+      .then((res) => {
         $scope.repoList = res.items;
         if (res.total_count % 20 === 0) {
           $scope.lastPage = Math.floor(res.total_count / 20);
         } else {
           $scope.lastPage = Math.floor(res.total_count / 20) + 1;
-        } 
+        }
       });
     $scope.searchForNewPage = () => {
       $q.when(repoSearch($stateParams.query, $scope.currentPage))
-        .then( res => {
+        .then((res) => {
           $scope.repoList = res.items;
-      })
-    }
-
-    $scope.handleClick = page => {
-      console.log(page);
+        });
+    };
+    $scope.handleClick = (page) => {
       switch (page) {
         case ('Next'): {
           $scope.currentPage += 1;
@@ -44,6 +42,6 @@ angular.module('app').component('repoList', {
           break;
         }
       }
-    }  
+    };
   }],
 });
