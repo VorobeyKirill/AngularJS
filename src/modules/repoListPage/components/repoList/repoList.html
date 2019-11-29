@@ -4,17 +4,17 @@
             <repo-item info="item"></repo-item>
         </li>
     </ul>
-    <div class="pagination" ng-show="repoList.length">
-        <a class="pagination-button">Prev</a>
+    <div class="pagination" ng-show="repoList.length" ng-click="handleClick($event.target.innerText)">
+        <a class="pagination-button" ng-show="currentPage > 1">Prev</a>
         <a class="pagination-button">1</a>
-        <span>...</span>
-        <a class="pagination-button">{{5}}</a>
-        <a class="pagination-button">{{6}}</a>
-        <a class="pagination-button">{{7}}</a>
-        <a class="pagination-button">{{8}}</a>
-        <a class="pagination-button">{{9}}</a>
-        <span>...</span>
-        <a class="pagination-button">20</a>
-        <a class="pagination-button">Next</a>
+        <span ng-show="currentPage > 4">...</span>
+        <a class="pagination-button" ng-show="currentPage > 3">{{currentPage - 2}}</a>
+        <a class="pagination-button" ng-show="currentPage > 2">{{currentPage - 1}}</a>
+        <a class="pagination-button" ng-show="currentPage > 1 && +currentPage !== +lastPage">{{currentPage}}</a>
+        <a class="pagination-button" ng-show="currentPage < lastPage - 1">{{+currentPage + 1}}</a>
+        <a class="pagination-button" ng-show="currentPage < lastPage - 2">{{+currentPage + 2}}</a>
+        <span ng-show="currentPage < lastPage - 3">...</span>
+        <a class="pagination-button">{{lastPage}}</a>
+        <a class="pagination-button" ng-show="currentPage < lastPage">Next</a>
     </div>
 </div>

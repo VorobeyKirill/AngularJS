@@ -105,8 +105,8 @@
   margin-top: -50px; }
 
 .pagination {
-  width: 27%;
-  margin: 50px auto; }
+  margin: 50px 0;
+  text-align: center; }
 
 .pagination-button {
   padding: 4px 6px;
