@@ -1,4 +1,5 @@
 const app = angular.module('app', ['ui.router']);
+window['AppModules'] = {};
 
 app.config(($stateProvider, $urlRouterProvider) => {
   const authorPage = {
@@ -40,16 +41,6 @@ app.service('searchService', function () {
     return data;
   }
 });
-angular.module('app').component('author', {
-  templateUrl: './modules/authorPage/components/author/author.html',
-  controller: ['$scope', '$stateParams', '$q', 'searchService', ($scope, $stateParams, $q, searchService) => {
-    $q.when(searchService.authorSearch($stateParams.query))
-      .then(res => {
-        $scope.info = res;
-      });
-  }],
-});
-
 angular.module('app').component('searchForm', {
   templateUrl: './modules/mainPage/components/searchForm/searchForm.html',
   controller: ['$scope', '$state', '$stateParams', ($scope, $state, $stateParams) => {
@@ -108,5 +99,15 @@ angular.module('app').component('repoList', {
         }
       }
     };
+  }],
+});
+
+angular.module('app').component('author', {
+  templateUrl: './modules/authorPage/components/author/author.html',
+  controller: ['$scope', '$stateParams', '$q', 'searchService', ($scope, $stateParams, $q, searchService) => {
+    $q.when(searchService.authorSearch($stateParams.query))
+      .then(res => {
+        $scope.info = res;
+      });
   }],
 });
