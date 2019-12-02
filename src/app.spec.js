@@ -2,8 +2,10 @@ const angular = require('angular');
 global.AppModules = {};
 require('../node_modules/angular-mocks/angular-mocks.js');
 require('./app');
+
+let tst;
+
 global.fetch = jest.fn(url => {
-    let tst;
     switch (url) {
         case ('https://api.github.com/search/repositories?q=test&page=1&per_page=20'): {
             tst = {
@@ -45,6 +47,11 @@ describe('searchService', () => {
     it('search should call fetch', async function () {
         await searchService.repoSearch('test', 1);
         expect(global.fetch).toHaveBeenCalled();
+    });
+
+    it('search should call json', async function () {
+        await searchService.repoSearch('test', 1);
+        expect(tst.json).toHaveBeenCalled();
     });
 
     it('repoSearch should return object with two fields', async function () {
