@@ -1,0 +1,38 @@
+{
+  "name": "angularjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VorobeyKirill/AngularJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VorobeyKirill/AngularJS/issues"
+  },
+  "homepage": "https://github.com/VorobeyKirill/AngularJS#readme",
+  "devDependencies": {
+    "angular-mocks": "^1.7.9",
+    "browser-sync": "^2.26.7",
+    "eslint": "^6.7.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.2",
+    "i": "^0.3.6",
+    "jest": "^24.9.0",
+    "jest-cli": "^24.9.0",
+    "node-sass": "^4.13.0",
+    "npm": "^6.13.1"
+  },
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.23",
+    "angular": "1.6.9",
+    "gulp": "^4.0.2"
+  }
+}

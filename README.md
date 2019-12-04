@@ -1,1 +1,2 @@
-# AngularJS
+Development version
+'gulp serve' to start application

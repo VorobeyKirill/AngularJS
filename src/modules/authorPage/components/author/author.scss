@@ -1,0 +1,69 @@
+$border: 1px solid #999;
+$textColorDark: #000;
+$fontFamily: sans-serif;
+$backgroundColor: #fff;
+
+.author {
+    width: 60%;
+    height: 40vh;
+    margin: 20vh auto;
+    display: flex;
+    justify-content: space-around;
+    border: $border;
+    font-family: $fontFamily;
+    background-color: $backgroundColor;
+}
+
+.author__photo {
+    width: 30%;
+    height: 30vh;
+    margin-top: 5vh;
+}
+
+.info {
+    width: 55%;
+    margin-top: 5vh;
+    text-align: center;
+}
+
+.info__login {
+    display: block;
+    color: $textColorDark;
+    font-size: 1.3rem;
+}
+
+.info__name {
+    display: block;
+    margin-top: 10px;
+    color: #888;
+}
+
+.info__repos {
+    display: block;
+    margin-top: 20px
+}
+
+.additional {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.linkToMain {
+    display: block;
+    width:  200px;
+    height: 30px;
+    margin: 0 auto;
+    border: $border;
+    color: $textColorDark;
+    line-height: 30px;
+    text-align: center;
+    font-family: $fontFamily;
+    background-color: $backgroundColor;
+    &:hover {
+        cursor: pointer;
+        background-color: #eee; 
+    }
+}

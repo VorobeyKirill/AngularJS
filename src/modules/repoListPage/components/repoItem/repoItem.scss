@@ -1,0 +1,27 @@
+$textColor: #000;
+$width: 60%;
+$fontFamily: sans-serif;
+
+.repoItem {
+    width: $width;
+    height: 6vh;
+    margin: 10px auto;
+    border: 1px solid #888;
+    border-radius: 5px;
+    text-align: center;
+    font-family: $fontFamily;
+    background-color: rgb(252, 255, 242);
+}
+
+.repoItem__name {
+    color: $textColor;
+    font-size: 1.2rem;
+}
+
+.content {
+    width: $width;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

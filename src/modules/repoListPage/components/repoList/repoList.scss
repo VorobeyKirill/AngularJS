@@ -1,0 +1,22 @@
+.reposList {
+    margin-top: -50px;
+}
+
+.pagination {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.pagination-button {
+    padding: 4px 6px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    &:hover:not(:active) {
+        cursor: pointer;
+        background-color: #ddd;
+    }
+}
+
+.active {
+    border: 1px solid rgb(67, 65, 216);
+}
